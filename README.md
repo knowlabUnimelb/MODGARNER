@@ -8,6 +8,7 @@ Little, D. R., Wang, T. & Nosofsky, R. (2016). Sequence-sensitive exemplar and d
 Archive created 10-Nov-17
 
 ========================================================================
+
 Folders:
 ========================================================================
 Experimental Code
@@ -22,6 +23,7 @@ MODIFIED GARNER BOXCAR/Experiment
 -- RUN_SEPARABLE_BOXCAR.m is the main script
 
 ========================================================================
+
 Data
 - Contains Raw Data and analysis code from Lin2017
 ------------------------------------------------------------------------
@@ -72,6 +74,7 @@ AverageOverallRTanalysis
 
 
 ========================================================================
+
 Modeling
 ------------------------------------------------------------------------
 GARNER SEQ EB-LBA DEMCMC
