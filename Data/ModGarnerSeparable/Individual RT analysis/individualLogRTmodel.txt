@@ -1,0 +1,22 @@
+# JAGS model
+model{
+    # Likelihood
+    for (idx in 1:nRT){
+        logrt[idx] ~ dnorm(mu[task[idx], item[idx]], lambda[task[idx], item[idx]])
+        predlogrt[idx] ~ dnorm(mu[task[idx], item[idx]], lambda[task[idx], item[idx]])
+        predrt[idx] <- exp(predlogrt[idx])
+    }
+
+    # Set prior for each condition deviation
+    for (tidx in 1:nTask){
+        for (iidx in 1:nItem){
+            mu[tidx, iidx] ~ dnorm(M, L)
+            sigma[tidx, iidx] ~ dunif(0.001, 10)
+            lambda[tidx, iidx] <- 1/pow(sigma[tidx, iidx], 2)
+        }
+    }
+
+    # Overall deviation prior
+    M ~ dnorm(6, .1)
+    L ~ dgamma(.001, .001)
+}
