@@ -1,0 +1,21 @@
+# JAGS model
+model{
+    # Likelihood
+    for (cidx in 1:c){
+        for (sidx in 1:n){
+            subD[sidx, cidx] ~ dnorm(mu[cidx], lambda[cidx])
+            predD[sidx, cidx] ~ dnorm(mu[cidx], lambda[cidx])
+        }
+    }
+
+    # Set prior for each condition deviation
+    for (ci in 1:c){
+        mu[ci] ~ dnorm(M, L)
+        sigma[ci] ~ dunif(0.001, 10)
+        lambda[ci] <- 1/pow(sigma[ci],2)
+    }
+
+    # Overall deviation prior
+    M ~ dnorm(0, .001)
+    L ~ dgamma(.001, .001)
+}
