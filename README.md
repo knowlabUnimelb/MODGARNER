@@ -1,11 +1,15 @@
 # MODGARNER
 This project contains data and code for the modified Garner experiments published in:
-Lin & Little (2017)
+Lin & Little (2018). Manuscript Submitted for Publication
 
 Additional code is included for anlaysis of published in:
 Little, D. R., Wang, T. & Nosofsky, R. (2016). Sequence-sensitive exemplar and decision-bound accounts of speeded-classification performance in a modified Garner-tasks paradigm. Cognitive Psychology, 89, 1-38. doi: 10.1016/j.cogpsych.2016.07.001
 
 Archive created 10-Nov-17
+
+Updates
+
+11-May-17 Updated modelling code for single channel model
 
 ========================================================================
 
@@ -86,3 +90,6 @@ GARNER SEQ EB-LBA DEMCMC
 - Use plotPosteriorPredictives7.m to make plots in the supplementary material (need to put fit file in fit folder first)
 - Use plotPosteriorsViolinExp to make parameter plots in the supplement
 - When fitting integral dimensions, need to change R_METRIC = 2 and SHEPARD_EXPONENT =2 in seqEBLBA.m. Set both = 1 for separable dimensions.
+
+GARNER SEQ EB-LBA DEMCMC - Single Channel
+- Same as GARNER SEQ EB-LBA DEMCMC but utilizes only the relevant dimension for each task
