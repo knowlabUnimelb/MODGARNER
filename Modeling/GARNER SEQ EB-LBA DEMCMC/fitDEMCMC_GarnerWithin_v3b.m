@@ -3,7 +3,7 @@
 % Fit all subjects from both conditions (bri/sat) using sequential EB
 % model with full parameterization (v4)
 %
-% theta ~ phi
+% theta ~ phit5
 % data ~ theta
 clear variables
 clc
@@ -11,12 +11,12 @@ close all
 format short g
 
 % Set up parallel processing here if necesary (it seems to slow this code down)
-parpool('local', 8)
-fn = 'GarnerWithin_Bri_Sat_meancentered.mat';
+parpool('local', 12)
+fn = 'GarnerSeparable_Saturation_meancentered.mat';
 
 %% Load an organize data
-[model, data, n, subnums] = loadData;
-% [model, data, n, subnums] = loadDataSep; 
+% [model, data, n, subnums] = loadData;
+[model, data, n, subnums] = loadDataSep; 
 %[model, data, n, subnums] = loadDataBoxcar; 
 % [model, data, n, subnums] = loadDataModelRecovery;
 

@@ -31,11 +31,11 @@ proposal = phi(propSet, :) + unifrnd(-beta, beta, numel(propSet), 2);
 
 % Current samples weights for each target chain for given hyperparm
 oldweight = logDensPrior_v2(subjectThetaChains, current, names(ceil(kdx/2))) +...
-            logDensPrior_v2(current, phiprior, hnames(kdx:kdx+1)); 
+            logDensPriorPhi(current, phiprior, hnames(kdx:kdx+1)); 
 
 % Proposal samples weights for each target chain for given hyperparm        
 newweight = logDensPrior_v2(subjectThetaChains, proposal, names(ceil(kdx/2))) +...
-            logDensPrior_v2(proposal, phiprior, hnames(kdx:kdx+1));          
+            logDensPriorPhi(proposal, phiprior, hnames(kdx:kdx+1));          
 newweight(any(proposal < 0, 2)) = -Inf;  % Check that the proposal parms are sensible
 
 updateset = rand(csetsize, 1) < exp(newweight - oldweight); % Flag chains to update

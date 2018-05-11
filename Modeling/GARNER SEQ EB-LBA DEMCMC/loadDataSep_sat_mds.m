@@ -3,7 +3,7 @@ function [model, data, n, subnums] = loadDataSep
 
 model = @seqEBLBA;
 
-% cols = {'sub', 'task', 'sess', 'trl', 'item', 'acc', 'rts', 'exc'};
+cols = {'sub', 'task', 'sess', 'trl', 'item', 'acc', 'rts', 'exc'};
 % subs = {'B1', 'B2', 'B3', 'B4', 'S1', 'S2', 'S3', 'S4'};
 % subnums = [101:104 201:204];
 
@@ -34,9 +34,10 @@ for sidx = 1:numel(subs)
     
     %% MDS information
 %     if strcmp(subject(1), 'B')
-        data.stimloc{sidx} = load(fullfile(pwd, 'MDS', 'mds_Separable.dat'));
+%         data.stimloc{sidx} = load(fullfile(pwd, 'MDS', 'mds_Separable.dat'));
 %     else % If saturation, flip xy
-        data.stimloc{sidx} = load(fullfile(pwd, 'MDS', 'mds_Separable.dat'));
+                data.stimloc{sidx} = load(fullfile(pwd, 'MDS', 'mds_Saturation - Constrained.dat'));
+        data.stimloc{sidx} = data.stimloc{sidx}(:, [2 1]);
 %         data.stimloc{sidx} = data.stimloc{sidx}(:, [2 1]);
 %     end
 end

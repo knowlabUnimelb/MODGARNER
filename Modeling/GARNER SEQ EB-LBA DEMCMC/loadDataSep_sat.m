@@ -3,15 +3,15 @@ function [model, data, n, subnums] = loadDataSep
 
 model = @seqEBLBA;
 
-% cols = {'sub', 'task', 'sess', 'trl', 'item', 'acc', 'rts', 'exc'};
+cols = {'sub', 'task', 'sess', 'trl', 'item', 'acc', 'rts', 'exc'};
 % subs = {'B1', 'B2', 'B3', 'B4', 'S1', 'S2', 'S3', 'S4'};
 % subnums = [101:104 201:204];
 
-% subs = {'B1', 'B2', 'B3', 'B4'};
-% subnums = [101:104];
+subs = {'B1', 'B2', 'B3', 'B4'};
+subnums = [101:104];
 
-subs = {'S1', 'S2', 'S3', 'S4'};
-subnums = [201:204];
+% subs = {'S1', 'S2', 'S3', 'S4'};
+% subnums = [201:204];
 
 data = struct('data', [], 'cols', []);
 for sidx = 1:numel(subs)
